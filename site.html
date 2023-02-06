@@ -39,33 +39,21 @@
     
   }
 
-  main {
-    background-color: #333;
-  }
-  
-  .snowflake {
-    position: absolute;
-    top: -50px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: 15px;
-    height: 15px;
-    background-color: #fff;
-    border-radius: 50%;
-    animation: snowflake 5s linear infinite;
-  }
+  .ca
 
-  @keyframes snowflake {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
+  main {
+    background-color: #ffffff;
   }
   
+  .heart {
+        position: absolute;
+        font-size: 24px;
+      }
+  
+      .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
   
 </style>
 
@@ -73,8 +61,47 @@
 	
   </head>
   <body>
+    <!-- <script>
+      function displayHearts() {
+        var heart = "❤️";
+        for (var i = 0; i < 30; i++) {
+          var x = Math.floor(Math.random() * window.innerWidth);
+          var y = Math.floor(Math.random() * window.innerHeight);
+          var element = document.createElement("div");
+          element.classList.add("heart");
+          element.style.left = x + "px";
+          element.style.top = y + "px";
+          element.innerHTML = heart;
+          document.body.appendChild(element);
+        }
+      }
+      window.onload = displayHearts;
+    </script> -->
+
+<script>
+  function randomPosition() {
+    const x = Math.floor(Math.random() * window.innerWidth);
+    const y = Math.floor(Math.random() * window.innerHeight);
+    return [x, y];
+  }
+
+  function addHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.classList.add("heart");
+    const [x, y] = randomPosition();
+    heart.style.left = x + "px";
+    heart.style.top = y + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => {
+      heart.remove();
+    }, 1000);
+  }
+
+  setInterval(addHeart, 500);
+</script>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav style="background-color:#611626;" class="navbar navbar-expand-lg navbar-dark ">
         <a class="navbar-brand" href="#">Meu Site</a>
         <button
           class="navbar-toggler"
@@ -102,8 +129,8 @@
         </div>
       </nav>
     </header>
-	<div class="title-section" style="display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #333; color: white; font-size: 2rem; font-weight: bold; font-family: 'Courier New', Courier, monospace;">
-    A vida a dois de Arthur e Juliana
+	<div class="title-section" style="display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #ffffff; color: rgb(0, 0, 0); font-size: 2rem; font-weight: bold; font-family: 'Courier New', Courier, monospace;">
+    Arthur e Juliana
   </div>
     <main>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -145,6 +172,9 @@
 </a>
 </div>
 </main>
+<div class="title-section" style="display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #ffffff; color: white; font-size: 2rem; font-weight: bold; font-family: 'Courier New', Courier, monospace;">
+   
+</div>
 <footer class="bg-dark text-white py-3">
   <div class="container">
     <p class="text-center">
